@@ -1,7 +1,6 @@
-import React from 'react';
 import './style.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="header">
@@ -9,6 +8,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
