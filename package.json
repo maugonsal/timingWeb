@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.4",
     "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
+    "@types/node": "^17.0.23",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "react": "^18.0.0",
@@ -44,15 +44,19 @@
     "commitlint-config-jira": "^1.6.3",
     "commitlint-plugin-jira-rules": "^1.6.3",
     "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "husky": "^7.0.0",
     "lint-staged": "^12.3.7",
     "prettier": "2.6.2"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "*.{ts,tsx}": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
   }
 }

@@ -4,12 +4,7 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: [
-    'prettier',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -19,11 +14,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'no-console': 'off',
     complexity: ['error', 7],
-    'react/jsx-uses-react': 'error',
-    'no-shadow': 'off',
-    'max-lines': ['error', { max: 300, skipBlankLines: true }],
-    '@typescript-eslint/no-shadow': ['error'],
     'react/jsx-closing-bracket-location': 0,
     'react/jsx-closing-tag-location': 0,
     'react/jsx-curly-spacing': 0,
@@ -50,6 +42,14 @@ module.exports = {
     'no-useless-constructor': 0,
     'react/jsx-curly-newline': 0,
     'import/extensions': 0,
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'max-lines': ['error', { max: 300, skipBlankLines: true }],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
@@ -57,8 +57,11 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
   },
   settings: {
-    react: {
-      version: 'detect',
+    'import/resolver': {
+      node: {
+        extensions: ['.ts', '.tsx'],
+        moduleDirectory: ['src', 'node_modules'],
+      },
     },
   },
 };
