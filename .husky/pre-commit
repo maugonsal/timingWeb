@@ -3,4 +3,5 @@
 
 yarn lint
 yarn types
+npx lint-stagednpx lint-staged
 npx lint-staged

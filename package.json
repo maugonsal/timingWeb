@@ -44,11 +44,15 @@
     "commitlint-config-jira": "^1.6.3",
     "commitlint-plugin-jira-rules": "^1.6.3",
     "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.7"
+    "husky": "^7.0.0",
+    "lint-staged": "^12.3.7",
+    "prettier": "2.6.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint"
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
