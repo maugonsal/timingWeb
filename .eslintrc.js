@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'no-console': 'off',
+    'no-console': 1,
     complexity: ['error', 7],
     'react/jsx-closing-bracket-location': 0,
     'react/jsx-closing-tag-location': 0,
