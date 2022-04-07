@@ -1,0 +1,25 @@
+header {
+  background-color: var(--black);
+  height: 80px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 40px;
+}
+.container {
+  border: var(--purple);
+  border-width: 3px;
+  border-bottom-style: inset;
+}
+.logo {
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  z-index: 2;
+}
+.titleHeader {
+  color: var(--white);
+  font-family: 'Red Hat Display';
+  font-size: 20px;
+}
