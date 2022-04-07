@@ -1,12 +1,6 @@
 import React, { FC } from 'react';
-import './style.css';
+import Home from './common/Home';
 
-const App: FC = () => (
-  <div className="App">
-    <header className="header">
-      <h1>Timing Web</h1>
-    </header>
-  </div>
-);
+const App: FC = () => <Home />;
 
 export default App;
