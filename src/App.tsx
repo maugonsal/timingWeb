@@ -1,13 +1,6 @@
-import React, { FC, Suspense } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { FC } from 'react';
 import Home from './common/Home';
 
-const App: FC = () => (
-  <Suspense fallback={null}>
-    <Router>
-      <Home />
-    </Router>
-  </Suspense>
-);
+const App: FC = () => <Home />;
 
 export default App;
