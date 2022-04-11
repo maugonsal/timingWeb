@@ -12,6 +12,17 @@ header {
   border-width: 3px;
   border-bottom-style: inset;
 }
+.containerSelect {
+  display: flex;
+  align-items: center;
+}
+.containerLanguage {
+  color: var(--white);
+  font-family: 'Red Hat Display';
+  font-size: 20px;
+  background-color: var(--black);
+  border-color: var(--black);
+}
 .logo {
   height: 180px;
   width: 180px;
