@@ -1,0 +1,28 @@
+.containerBar {
+    font-family: 'Red Hat Display';
+    width: 1000px;
+    margin: 0 auto;
+}
+.titleDays {
+    margin: 0;
+}
+.days {
+    color: var(--purple);
+    margin: 0;
+}
+.title {
+    display: flex;
+}
+.label {
+    transform: scaleX(-1);
+    position: relative;
+    left: 25px;
+}
+.day {
+    margin: 0;
+    transform: scaleX(-1);
+}
+.svg {
+    position: relative;
+    top: 10px;
+}
