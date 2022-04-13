@@ -55,6 +55,7 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'react/react-in-jsx-scope': 'off',
+    'linebreak-style': ['error', 'windows'],
   },
   settings: {
     'import/resolver': {
