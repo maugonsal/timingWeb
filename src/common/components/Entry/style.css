@@ -1,0 +1,62 @@
+.containerEntry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerInputs {
+  margin-inline: 50px;
+  background-color: var(--purple);
+  border-radius: 10px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.titleInput {
+  color: var(--white);
+  margin: 0;
+}
+.buttons {
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 28px;
+}
+.buttonCalculate.MuiButton-contained {
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: 'Red Hat Display';
+  font-size: 18px;
+  height: 50px;
+  border-radius: 8px;
+}
+.buttonAdd.MuiButton-text {
+  padding: 0;
+  color: var(--white);
+  font-family: 'Red Hat Display';
+  font-size: 10px;
+  text-transform: none;
+}
+.inputName {
+  background-color: var(--white);
+  border-radius: 3px;
+  padding-inline: 10px;
+  height: 55px;
+  width: 100%;
+}
+.containerInsemination {
+  width: 280px;
+  padding-top: 20px;
+}
+.containerData {
+  width: 280px;
+}
+.containerDate {
+  background-color: var(--white);
+  border-radius: 7px;
+  width: 100%;
+}
+.settings {
+  margin-inline: 10px;
+  margin-top: 5px;
+}

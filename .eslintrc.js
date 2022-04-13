@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'react/jsx-props-no-spreading': 0,
     'no-console': 1,
     complexity: ['error', 7],
     'react/jsx-closing-bracket-location': 0,
