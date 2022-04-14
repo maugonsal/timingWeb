@@ -1,7 +1,12 @@
 {
   "title": "Welcome to Timing web",
-  "language": {
-    "en": "English",
-    "es": "Spanish"
-  }
+  "en": "English",
+  "es": "Spanish",
+  "addNewDate": "Add Insemination Date",
+  "calculator": "Calculator",
+  "name": "Name of the Dog",
+  "ovulation": "Ovulation Date",
+  "insemination": "Insemination Date",
+  "calculate": "Calculate",
+  "settings": "Settings"
 }

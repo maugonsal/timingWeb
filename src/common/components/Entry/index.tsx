@@ -3,12 +3,14 @@ import { ReactSVG } from 'react-svg';
 import { Input, Button, TextField } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { useTranslation } from 'react-i18next';
 import AddNewDate from './components/AddNewDate';
 import { generateDateId } from '../../../utils/date';
 import { Entry } from '../../../types';
 import './style.css';
 
 const EntryPage: FC = () => {
+  const { t } = useTranslation();
   const [entry, setEntry] = useState<Entry>({
     name: '',
     ovulation: '',
@@ -19,16 +21,16 @@ const EntryPage: FC = () => {
   return (
     <div>
       <div className="containerEntry">
-        <h1 className="title">Calculator</h1>
+        <h1 className="title">{t('calculator')}</h1>
         <ReactSVG src="/resources/svg/appLogoBlack.svg" />
       </div>
       <div className="containerInputs">
         <div className="containerData">
-          <h4 className="titleInput">Name of the Dog</h4>
+          <h4 className="titleInput">{t('name')}</h4>
           <Input placeholder="Name" className="inputName" />
         </div>
         <div className="containerData">
-          <h4 className="titleInput">Ovulation Date</h4>
+          <h4 className="titleInput">{t('ovulation')}</h4>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
               className="containerDate"
@@ -46,7 +48,7 @@ const EntryPage: FC = () => {
           </LocalizationProvider>
         </div>
         <div className="containerInsemination">
-          <h4 className="titleInput">Insemination Date</h4>
+          <h4 className="titleInput">{t('insemination')}</h4>
           {entry.inseminations.map((insemination, index) => (
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
@@ -90,11 +92,11 @@ const EntryPage: FC = () => {
         </div>
         <div className="buttons">
           <Button variant="contained" className="buttonCalculate">
-            Calculate
+            {t('calculate')}
           </Button>
           <Button variant="text" className="buttonAdd">
             <ReactSVG src="/resources/svg/setting.svg" className="settings" />
-            Settings
+            {t('settings')}
           </Button>
         </div>
       </div>

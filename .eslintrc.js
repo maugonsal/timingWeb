@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'import/no-unresolved': 0,
     'react/jsx-props-no-spreading': 0,
     'no-console': 1,
     complexity: ['error', 7],
