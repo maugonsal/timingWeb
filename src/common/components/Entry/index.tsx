@@ -47,36 +47,41 @@ const EntryPage: FC = () => {
             />
           </LocalizationProvider>
         </div>
-        <div className="containerInsemination">
-          <h4 className="titleInput">{t('insemination')}</h4>
+        <div className="containerData">
+          {entry.inseminations.length ? null : (
+            <h4 className="titleInput">{t('insemination')}</h4>
+          )}
           {entry.inseminations.map((insemination, index) => (
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DatePicker
-                key={insemination.id}
-                className="containerDate"
-                value={entry.inseminations[index].date}
-                onChange={(newDate) => {
-                  const { inseminations } = entry;
-                  const inseminationId = entry.inseminations[index].id;
-                  const inseminationsDates = inseminations.map((item) => {
-                    if (item.id === inseminationId) {
-                      return {
-                        ...item,
-                        date: newDate?.toString() || '',
-                      };
-                    }
-                    return item;
-                  });
-                  setEntry((prev) => ({
-                    ...prev,
-                    inseminations: inseminationsDates,
-                  }));
-                }}
-                renderInput={(params) => (
-                  <TextField className="containerDate" {...params} />
-                )}
-              />
-            </LocalizationProvider>
+            <div className="containerInsemination">
+              <h4 className="titleInput">{t('insemination')}</h4>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DatePicker
+                  key={insemination.id}
+                  className="containerDate"
+                  value={entry.inseminations[index].date}
+                  onChange={(newDate) => {
+                    const { inseminations } = entry;
+                    const inseminationId = entry.inseminations[index].id;
+                    const inseminationsDates = inseminations.map((item) => {
+                      if (item.id === inseminationId) {
+                        return {
+                          ...item,
+                          date: newDate?.toString() || '',
+                        };
+                      }
+                      return item;
+                    });
+                    setEntry((prev) => ({
+                      ...prev,
+                      inseminations: inseminationsDates,
+                    }));
+                  }}
+                  renderInput={(params) => (
+                    <TextField className="containerDate" {...params} />
+                  )}
+                />
+              </LocalizationProvider>
+            </div>
           ))}
           <AddNewDate
             onClick={() => {
