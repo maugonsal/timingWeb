@@ -27,23 +27,13 @@ body {
   position: relative;
   margin: 0 auto;
   font-family: var(--fontPrimary);
-  -webkit-font-smoothing: antialiased;
+  font-weight: var(--bold);
   -moz-osx-font-smoothing: grayscale;
   color: var(--black);
   transition: 1s all;
   max-width: 1800px;
 }
 
-h1,
-h2 {
-  font-size: 30px;
-  font-weight: var(--bold);
-}
-
 a {
   text-decoration: none;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
