@@ -1,7 +1,12 @@
 {
   "title": "Bienvenido a Timing web",
-  "language": {
-    "en": "Ingles",
-    "es": "Español"
-  }
+  "en": "Inglés",
+  "es": "Español",
+  "addNewDate": "Añadir fecha de inseminación",
+  "calculator": "Calcular",
+  "name": "Nombre del perro",
+  "ovulation": "Fecha de ovulación",
+  "insemination": "Fecha de inseminación",
+  "calculate": "Calcular",
+  "settings": "Configuración"
 }

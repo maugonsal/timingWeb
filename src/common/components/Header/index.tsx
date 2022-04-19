@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import { ReactSVG } from 'react-svg';
 import { useTranslation } from 'react-i18next';
-import { t } from 'i18next';
 import './style.css';
 
 const Header: FC = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const links = [{ url: 'https://ledog.co/coatcolor/', name: 'Coat Color' }];
 
   const handleLanguageChange = (e: {
@@ -28,8 +27,8 @@ const Header: FC = () => {
             <select
               className="containerLanguage"
               onChange={handleLanguageChange}>
-              <option value="en">{t('language.en')}</option>
-              <option value="es">{t('language.es')}</option>
+              <option value="en">{t('en')}</option>
+              <option value="es">{t('es')}</option>
             </select>
           </li>
         </div>
