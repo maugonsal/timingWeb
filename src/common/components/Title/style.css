@@ -1,0 +1,16 @@
+.containerTitle {
+    padding-left: 48px;
+    padding-top: 40px;
+}
+.title {
+    margin: 0;
+}
+.subtitle {
+    margin: 0;
+    font-weight: 400;
+    color: var(--blue);
+    font-size: 60px;
+    padding-left: 40px;
+    position: relative;
+    bottom: 10px;
+}
