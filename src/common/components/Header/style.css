@@ -18,7 +18,6 @@ header {
 }
 .containerLanguage {
   color: var(--white);
-  font-family: 'Red Hat Display';
   font-size: 20px;
   background-color: var(--black);
   border-color: var(--black);
@@ -31,6 +30,5 @@ header {
 }
 .titleHeader {
   color: var(--white);
-  font-family: 'Red Hat Display';
   font-size: 20px;
 }
