@@ -9,6 +9,8 @@ export interface Entry {
   ovulation: string;
   lastInsemination: string;
   inseminations: Insemination[];
+  ovulationDays: number;
+  inseminationDays: number;
 }
 
 export type SortByList = 'name' | 'lastInsemination' | 'ovulation';
