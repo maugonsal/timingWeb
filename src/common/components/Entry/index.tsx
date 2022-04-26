@@ -8,6 +8,7 @@ import AddNewDate from './components/AddNewDate';
 import { generateDateId } from '../../../utils/date';
 import { Entry } from '../../../types';
 import './style.css';
+import CalculatedEntry from './components/CalculatedEntry';
 
 const EntryPage: FC = () => {
   const { t } = useTranslation();
@@ -16,6 +17,8 @@ const EntryPage: FC = () => {
     ovulation: '',
     lastInsemination: '',
     inseminations: [],
+    ovulationDays: 63,
+    inseminationDays: 61,
   });
 
   return (
@@ -74,6 +77,8 @@ const EntryPage: FC = () => {
                     setEntry((prev) => ({
                       ...prev,
                       inseminations: inseminationsDates,
+                      lastInsemination:
+                        inseminationsDates[inseminationsDates.length - 1].date,
                     }));
                   }}
                   renderInput={(params) => (
@@ -91,14 +96,19 @@ const EntryPage: FC = () => {
                   ...prev.inseminations,
                   { id: generateDateId(), date: new Date().toString() },
                 ],
+                lastInsemination:
+                  entry.inseminations?.[entry.inseminations.length - 1]?.date,
               }));
             }}
           />
         </div>
         <div className="buttons">
-          <Button variant="contained" className="buttonCalculate">
-            {t('calculate')}
-          </Button>
+          <CalculatedEntry
+            entry={entry}
+            setRangeDates={() => {}}
+            setProgressValue={() => {}}
+            setCounterDaysByOvulation={() => {}}
+          />
           <Button variant="text" className="buttonAdd">
             <ReactSVG src="/resources/svg/setting.svg" className="settings" />
             {t('settings')}
