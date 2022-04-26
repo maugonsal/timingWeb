@@ -8,8 +8,8 @@ import { formatDate } from '../../../../utils/date';
 const CalculatedEntry: FC<{
   entry: Entry;
   setRangeDates: (date: string) => void;
-  setProgressValue: (arg0: number) => void;
-  setCounterDaysByOvulation: (arg0: number) => void;
+  setProgressValue: (value: number) => void;
+  setCounterDaysByOvulation: (days: number) => void;
 }> = ({
   entry,
   setRangeDates,
