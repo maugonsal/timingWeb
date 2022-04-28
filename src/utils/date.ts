@@ -1,6 +1,6 @@
 import { addDays, format } from 'date-fns';
 
-export const formatDate = (date: Date, typeFormat = 'dd/MM/yyy'): string => format(date, typeFormat);
+export const formatDate = (date: Date, typeFormat = 'dd-MM-yyy'): string => format(date, typeFormat);
 
 export const generateDateId = (): string => new Date().getTime().toString();
 

@@ -70,6 +70,7 @@ const CalculatedEntry: FC<{
   return (
     <div>
       <Button
+        disabled={entry.ovulation === '' || entry.inseminations.length === 0}
         variant="contained"
         className="buttonCalculate"
         onClick={() => calculate()}>

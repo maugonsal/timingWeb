@@ -1,18 +1,31 @@
 .result {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-  }
-  .resultContainer {
-    width: 73.2rem;
-    background: var(--white);
-    border: 4px solid var(--purple);
-    transition: all 500ms ease;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resultContainer {
+width: 72rem;
+background: var(--white);
+border: 4px solid var(--purple);
+transition: all 500ms ease;
+}
+.date {
+justify-content: center;
+display: flex;
+}
+.possibleDay {
+font-size: 22px;
+display: flex;
+align-items: center;
+}
+.range {
+border: 1px solid var(--purple);
+border-radius: 5px;
+padding-block: 5px;
+padding-inline: 7px;
+font-size: 30px;
+}
+.bar {
+padding-bottom: 60px;
+}
 
-  .buttonCalculate:focus ~ .result {
-    opacity: 1;
-    visibility: visible;
-  }

@@ -21,6 +21,7 @@ const Bar: FC<IBar> = ({ completed, daysLeft, customLabel }) => (
       borderRadius="3px"
       customLabel={customLabel}
       labelClassName="label"
+      maxCompleted={1}
     />
   </div>
 );

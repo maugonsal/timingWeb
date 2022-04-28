@@ -10,6 +10,7 @@ import { Entry } from '../../../types';
 import './style.css';
 import CalculatedEntry from './components/CalculatedEntry';
 import Settings from '../Settings';
+import Result from '../Result';
 
 const EntryPage: FC = () => {
   const { t } = useTranslation();
@@ -106,15 +107,14 @@ const EntryPage: FC = () => {
         <div className="buttons">
           <CalculatedEntry
             entry={entry}
-            setRangeDates={() => {}}
-            setProgressValue={() => {}}
-            setCounterDaysByOvulation={() => {}}
+            setRangeDates={setRangeDates}
+            setProgressValue={setProgressValue}
+            setCounterDaysByOvulation={setCounterDaysByOvulation}
           />
           <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
+      {rangeDates !== '' && <Result progressValue={progressValue} counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)} rangeDates={rangeDates} />}
     </div>
   );
 };
-
-export default EntryPage;
