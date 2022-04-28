@@ -1,0 +1,49 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:focus ~ .modal {
+  opacity: 1;
+  visibility: visible;
+}
+.modalContainer {
+  /* width: auto;
+  height: auto; */
+  background: var(--black);
+  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+  transition: all 500ms ease;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+}
+.btn:focus ~ .modal .modalContainer {
+  transform: translateY(0%);
+}
+.modalContainer p {
+  font-family: 'Red Hat Display';
+  position: relative;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: var(--white);
+  margin: 10px;
+  text-align: center;
+}
+.days {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+.title {
+  color: white;
+}
+.containerCounter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
