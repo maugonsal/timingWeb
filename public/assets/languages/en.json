@@ -9,5 +9,8 @@
   "ovulation": "Ovulation Date",
   "insemination": "Insemination Date",
   "calculate": "Calculate",
-  "settings": "Settings"
+  "settings": "Settings",
+  "preferences": "Set your preferences",
+  "afterOvulation": "Days after ovulation",
+  "afterInsemination": "Days after insemination"
 }

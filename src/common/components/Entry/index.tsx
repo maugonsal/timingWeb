@@ -9,6 +9,7 @@ import { generateDateId } from '../../../utils/date';
 import { Entry } from '../../../types';
 import './style.css';
 import CalculatedEntry from './components/CalculatedEntry';
+import Settings from '../Settings';
 
 const EntryPage: FC = () => {
   const { t } = useTranslation();
@@ -109,10 +110,7 @@ const EntryPage: FC = () => {
             setProgressValue={() => {}}
             setCounterDaysByOvulation={() => {}}
           />
-          <Button variant="text" className="buttonAdd">
-            <ReactSVG src="/resources/svg/setting.svg" className="settings" />
-            {t('settings')}
-          </Button>
+          <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
     </div>
