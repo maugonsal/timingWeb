@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 import './style.css';
+import { useTranslation } from 'react-i18next';
 
 interface IBar {
   completed: number | string;
@@ -8,10 +9,13 @@ interface IBar {
   customLabel: any;
 }
 
-const Bar: FC<IBar> = ({ completed, daysLeft, customLabel }) => (
+const Bar: FC<IBar> = ({ completed, daysLeft, customLabel }) => {
+  const { t } = useTranslation();
+
+  return (
   <div className="containerBar">
     <div className="title">
-      <h4 className="titleDays">Days left: &nbsp;</h4>
+      <h4 className="titleDays">{t('daysLeft')}: &nbsp;</h4>
       <h4 className="days">{daysLeft}</h4>
     </div>
     <ProgressBar
@@ -24,6 +28,7 @@ const Bar: FC<IBar> = ({ completed, daysLeft, customLabel }) => (
       maxCompleted={1}
     />
   </div>
-);
+  );
+};
 
 export default Bar;

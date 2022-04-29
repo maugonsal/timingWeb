@@ -10,11 +10,13 @@ const CalculatedEntry: FC<{
   setRangeDates: (date: string) => void;
   setProgressValue: (value: number) => void;
   setCounterDaysByOvulation: (days: number) => void;
+  setCounterLeft: (days: number) => void;
 }> = ({
   entry,
   setRangeDates,
   setProgressValue,
   setCounterDaysByOvulation,
+  setCounterLeft,
 }) => {
   const [probableDay, setProbableDay] = useState<string>('');
 
@@ -62,8 +64,12 @@ const CalculatedEntry: FC<{
           ),
         ),
     );
+
+    const counterLeft = inseminationDays + counterDays;
+
     const progressCount = Math.abs(counterDays) / inseminationDays;
     setCounterDaysByOvulation(counterDays);
+    setCounterLeft(counterLeft);
     setProgressValue(progressCount);
   };
 

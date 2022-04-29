@@ -12,6 +12,11 @@
   display: flex;
   justify-content: space-around;
 }
+.border {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .titleInput {
   color: var(--white);
   margin: 0;

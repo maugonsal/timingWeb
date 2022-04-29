@@ -22,14 +22,17 @@ const EntryPage: FC = () => {
     ovulationDays: 63,
     inseminationDays: 61,
   });
-
+  const [rangeDates, setRangeDates] = useState<string>('');
+  const [progressValue, setProgressValue] = useState<number>(0);
+  const [counterDaysByOvulation, setCounterDaysByOvulation] = useState<number>(0);
+  const [counterLeft, setCounterLeft] = useState<number>(0);
   return (
     <div>
-      <div className="containerEntry">
+      <div className="containerEntry ">
         <h1 className="title">{t('calculator')}</h1>
         <ReactSVG src="/resources/svg/appLogoBlack.svg" />
       </div>
-      <div className="containerInputs">
+      <div className={`containerInputs ${rangeDates !== '' && 'border'}`}>
         <div className="containerData">
           <h4 className="titleInput">{t('name')}</h4>
           <Input placeholder="Name" className="inputName" />
@@ -110,11 +113,14 @@ const EntryPage: FC = () => {
             setRangeDates={setRangeDates}
             setProgressValue={setProgressValue}
             setCounterDaysByOvulation={setCounterDaysByOvulation}
+            setCounterLeft={setCounterLeft}
           />
           <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
-      {rangeDates !== '' && <Result progressValue={progressValue} counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)} rangeDates={rangeDates} />}
+      {rangeDates !== '' && <Result progressValue={progressValue} counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)} rangeDates={rangeDates} setCounterLeft={counterLeft} />}
     </div>
   );
 };
+
+export default EntryPage;

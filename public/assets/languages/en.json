@@ -12,5 +12,8 @@
   "settings": "Settings",
   "preferences": "Set your preferences",
   "afterOvulation": "Days after ovulation",
-  "afterInsemination": "Days after insemination"
+  "afterInsemination": "Days after insemination",
+  "posibleDay": "Possible day of birth",
+  "day": "Day",
+  "daysLeft": "Days Left"
 }
