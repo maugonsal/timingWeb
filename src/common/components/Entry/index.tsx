@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import { ReactSVG } from 'react-svg';
 import { Input, Button, TextField } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
@@ -26,6 +26,15 @@ const EntryPage: FC = () => {
   const [progressValue, setProgressValue] = useState<number>(0);
   const [counterDaysByOvulation, setCounterDaysByOvulation] = useState<number>(0);
   const [counterLeft, setCounterLeft] = useState<number>(0);
+
+  const calculated = useMemo(() => (
+    <Result
+    progressValue={progressValue}
+    counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)}
+    rangeDates={rangeDates}
+    setCounterLeft={counterLeft} />
+  ), [progressValue, rangeDates, counterDaysByOvulation, counterLeft]);
+
   return (
     <div>
       <div className="containerEntry ">
@@ -114,11 +123,11 @@ const EntryPage: FC = () => {
             setProgressValue={setProgressValue}
             setCounterDaysByOvulation={setCounterDaysByOvulation}
             setCounterLeft={setCounterLeft}
-          />
+            />
           <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
-      {rangeDates !== '' && <Result progressValue={progressValue} counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)} rangeDates={rangeDates} setCounterLeft={counterLeft} />}
+            {counterLeft !== 0 && calculated}
     </div>
   );
 };

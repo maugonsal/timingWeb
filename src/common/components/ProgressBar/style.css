@@ -5,13 +5,19 @@
 }
 .titleDays {
     margin: 0;
+    color: var(--black);
 }
-.days {
+.daysLeft {
     color: var(--purple);
     margin: 0;
-}
-.title {
     display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.titleDaysLeft {
+    display: flex;
+    padding: 0;
+    align-items: baseline;
 }
 .label {
     transform: scaleX(-1);

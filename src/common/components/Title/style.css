@@ -4,6 +4,7 @@
 }
 .title {
     margin: 0;
+    color: var(--black);
 }
 .subtitle {
     margin: 0;

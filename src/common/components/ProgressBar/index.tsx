@@ -14,9 +14,9 @@ const Bar: FC<IBar> = ({ completed, daysLeft, customLabel }) => {
 
   return (
   <div className="containerBar">
-    <div className="title">
+    <div className="titleDaysLeft">
       <h4 className="titleDays">{t('daysLeft')}: &nbsp;</h4>
-      <h4 className="days">{daysLeft}</h4>
+      <h4 className="daysLeft">{daysLeft}</h4>
     </div>
     <ProgressBar
       completed={completed}
