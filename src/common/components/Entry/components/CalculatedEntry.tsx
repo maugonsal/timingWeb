@@ -53,25 +53,26 @@ const CalculatedEntry: FC<{
         setRangeDates(`${formatDate(firstDayBirthOfInsemination)}`);
       }
     }
-    const counterDays: number = differenceInDays(
-      new Date(),
-      entry?.ovulation !== ''
-        ? new Date(probableDay)
-        : new Date(
-          addDays(
-            new Date(entry.lastInsemination ?? new Date()),
-            inseminationDays,
-          ),
-        ),
-    );
-
-    const counterLeft = inseminationDays + counterDays;
-
-    const progressCount = Math.abs(counterDays) / inseminationDays;
-    setCounterDaysByOvulation(counterDays);
-    setCounterLeft(counterLeft);
-    setProgressValue(progressCount);
   };
+
+  const counterDays: number = differenceInDays(
+    new Date(),
+    entry?.ovulation !== ''
+      ? new Date(probableDay)
+      : new Date(
+        addDays(
+          new Date(entry.lastInsemination ?? new Date()),
+          inseminationDays,
+        ),
+      ),
+  );
+
+  const counterLeft = inseminationDays + counterDays;
+
+  const progressCount = Math.abs(counterDays) / inseminationDays;
+  setCounterDaysByOvulation(counterDays);
+  setCounterLeft(counterLeft);
+  setProgressValue(progressCount);
 
   return (
     <div>

@@ -120,14 +120,14 @@ const EntryPage: FC = () => {
           <CalculatedEntry
             entry={entry}
             setRangeDates={setRangeDates}
-            setProgressValue={setProgressValue}
             setCounterDaysByOvulation={setCounterDaysByOvulation}
+            setProgressValue={setProgressValue}
             setCounterLeft={setCounterLeft}
             />
           <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
-            {counterLeft !== 0 && calculated}
+            {rangeDates !== '' && calculated}
     </div>
   );
 };
