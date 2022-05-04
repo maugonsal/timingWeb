@@ -14,9 +14,9 @@
 
 .date {
   justify-content: space-around;
-  display: flex;
   flex-wrap: wrap;
   display: grid;
+  justify-items: center;
 }
 
 .rangeDate {
