@@ -10,34 +10,38 @@ interface IResult {
     counterDaysByOvulation: number;
     rangeDates: string;
     setCounterLeft: number;
+    probableDay: string;
 }
 
 const Result: FC<IResult> = ({
-  progressValue, counterDaysByOvulation, rangeDates, setCounterLeft,
+  progressValue, counterDaysByOvulation, rangeDates, setCounterLeft, probableDay,
 }) => {
   const { t } = useTranslation();
 
   return (
         <div className="result">
-                <div className="resultContainer">
-                    <div className="date">
-                        <h4 className="possibleDay">{t('posibleDay')}:&nbsp;&nbsp;&nbsp;
-                            <h4 className="range">{rangeDates}</h4>
-                        </h4>
-                    </div>
-                    <div className="bar">
-                        <Bar
-                            completed={progressValue}
-                            daysLeft={setCounterLeft}
-                            customLabel={<>
-                                <div className="svg">
-                                    <ReactSVG src="/resources/svg/primaryLogo.svg" />
-                                </div>
-                                <h4 className="day">{t('day')} {counterDaysByOvulation}</h4>
-                            </>} />
-                    </div>
+            <div className="resultContainer">
+                <div className="date">
+                    <h4 className="possibleDay">{t('possibleDay')}:&nbsp;&nbsp;&nbsp;
+                        <h4 className="possible">{probableDay}</h4>
+                    </h4>
+                    <h4 className="rangeDate">{t('rangeDate')}:&nbsp;&nbsp;&nbsp;
+                        <h4 className="range">{rangeDates}</h4>
+                    </h4>
+                </div>
+                <div className="bar">
+                    <Bar
+                        completed={progressValue}
+                        daysLeft={setCounterLeft}
+                        customLabel={<>
+                            <div className="svg">
+                                <ReactSVG src="/resources/svg/primaryLogo.svg" />
+                            </div>
+                            <h4 className="day">{t('day')} {counterDaysByOvulation}</h4>
+                        </>} />
                 </div>
             </div>
+        </div>
   );
 };
 

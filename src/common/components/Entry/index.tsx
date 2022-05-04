@@ -26,14 +26,16 @@ const EntryPage: FC = () => {
   const [progressValue, setProgressValue] = useState<number>(0);
   const [counterDaysByOvulation, setCounterDaysByOvulation] = useState<number>(0);
   const [counterLeft, setCounterLeft] = useState<number>(0);
+  const [probableDay, setProbableDay] = useState<string>('');
 
   const calculated = useMemo(() => (
     <Result
+    probableDay={probableDay}
     progressValue={progressValue}
     counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)}
     rangeDates={rangeDates}
     setCounterLeft={counterLeft} />
-  ), [progressValue, rangeDates, counterDaysByOvulation, counterLeft]);
+  ), [probableDay, progressValue, rangeDates, counterDaysByOvulation, counterLeft]);
 
   return (
     <div>
@@ -123,6 +125,7 @@ const EntryPage: FC = () => {
             setCounterDaysByOvulation={setCounterDaysByOvulation}
             setProgressValue={setProgressValue}
             setCounterLeft={setCounterLeft}
+            setProbableDay={setProbableDay}
             />
           <Settings entry={entry} setEntry={setEntry} />
         </div>

@@ -13,7 +13,8 @@
   "preferences": "Establece tus preferencias",
   "afterOvulation": "Días después de la ovulación",
   "afterInsemination": "Días después de la inseminación",
-  "posibleDay": "Posible dia de nacimiento",
+  "possibleDay": "Posible dia de nacimiento",
+  "rangeDate":"Rango de posibles fechas de parto",
   "day": "Dia",
   "daysLeft": "Dias restantes"
 }
