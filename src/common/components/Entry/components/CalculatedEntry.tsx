@@ -8,16 +8,18 @@ import { formatDate } from '../../../../utils/date';
 const CalculatedEntry: FC<{
   entry: Entry;
   setRangeDates: (date: string) => void;
+  setProbableDay: (date: string) => void;
   setProgressValue: (value: number) => void;
   setCounterDaysByOvulation: (days: number) => void;
+  setCounterLeft: (days: number) => void;
 }> = ({
   entry,
   setRangeDates,
+  setProbableDay,
   setProgressValue,
   setCounterDaysByOvulation,
+  setCounterLeft,
 }) => {
-  const [probableDay, setProbableDay] = useState<string>('');
-
   const { ovulationDays, inseminationDays } = entry;
   const { t } = useTranslation();
 
@@ -27,7 +29,7 @@ const CalculatedEntry: FC<{
         new Date(entry.ovulation),
         ovulationDays,
       );
-      setProbableDay(probableDayBirth.toString());
+      setProbableDay(`${formatDate(probableDayBirth)}`);
     }
     if (entry?.inseminations.length) {
       const firstInsemination = entry.inseminations[0].date;
@@ -43,7 +45,7 @@ const CalculatedEntry: FC<{
       );
       if (entry?.inseminations.length > 1) {
         setRangeDates(
-          `${formatDate(firstDayBirthOfInsemination)} - ${formatDate(
+          `${formatDate(firstDayBirthOfInsemination)} / ${formatDate(
             lastDayBirthOfInsemination,
           )}`,
         );
@@ -51,25 +53,31 @@ const CalculatedEntry: FC<{
         setRangeDates(`${formatDate(firstDayBirthOfInsemination)}`);
       }
     }
-    const counterDays: number = differenceInDays(
-      new Date(),
-      entry?.ovulation !== ''
-        ? new Date(probableDay)
-        : new Date(
-          addDays(
-            new Date(entry.lastInsemination ?? new Date()),
-            inseminationDays,
-          ),
-        ),
-    );
-    const progressCount = Math.abs(counterDays) / inseminationDays;
-    setCounterDaysByOvulation(counterDays);
-    setProgressValue(progressCount);
   };
+
+  const counterDays: number = differenceInDays(
+    new Date(),
+    entry?.ovulation !== ''
+      ? new Date(entry.ovulation)
+      : new Date(
+        addDays(
+          new Date(entry.lastInsemination ?? new Date()),
+          inseminationDays,
+        ),
+      ),
+  );
+
+  const counterLeft = inseminationDays - counterDays;
+
+  const progressCount = Math.abs(counterDays) / inseminationDays;
+  setCounterDaysByOvulation(counterDays);
+  setCounterLeft(counterLeft);
+  setProgressValue(progressCount);
 
   return (
     <div>
       <Button
+        disabled={entry.ovulation === '' || entry.inseminations.length === 0}
         variant="contained"
         className="buttonCalculate"
         onClick={() => calculate()}>

@@ -40,21 +40,21 @@ const Settings: FC<{
         <div className="modalContainer">
           <p>{t('preferences')}</p>
           <div className="containerCounter">
-            <h3 className="title">{t('afterOvulation')}</h3>
+            <h3 className="settingTitle">{t('afterOvulation')}</h3>
             <Button onClick={removeOvulation}>
               <ReactSVG src="/resources/svg/arrowLeft.svg" />
             </Button>
-            <div className="days">{ovulationDays}</div>
+            <div className="settingsDay">{ovulationDays}</div>
             <Button onClick={addOvulation}>
               <ReactSVG src="/resources/svg/arrowRight.svg" />
             </Button>
           </div>
           <div className="containerCounter">
-            <h3 className="title">{t('afterInsemination')}</h3>
+            <h3 className="settingTitle">{t('afterInsemination')}</h3>
             <Button onClick={removeInsemination}>
               <ReactSVG src="/resources/svg/arrowLeft.svg" />
             </Button>
-            <div className="days">{inseminationDays}</div>
+            <div className="settingsDay">{inseminationDays}</div>
             <Button onClick={addInsemination}>
               <ReactSVG src="/resources/svg/arrowRight.svg" />
             </Button>

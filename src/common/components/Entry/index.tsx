@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import { ReactSVG } from 'react-svg';
 import { Input, Button, TextField } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
@@ -10,6 +10,7 @@ import { Entry } from '../../../types';
 import './style.css';
 import CalculatedEntry from './components/CalculatedEntry';
 import Settings from '../Settings';
+import Result from '../Result';
 
 const EntryPage: FC = () => {
   const { t } = useTranslation();
@@ -21,14 +22,28 @@ const EntryPage: FC = () => {
     ovulationDays: 63,
     inseminationDays: 61,
   });
+  const [rangeDates, setRangeDates] = useState<string>('');
+  const [progressValue, setProgressValue] = useState<number>(0);
+  const [counterDaysByOvulation, setCounterDaysByOvulation] = useState<number>(0);
+  const [counterLeft, setCounterLeft] = useState<number>(0);
+  const [probableDay, setProbableDay] = useState<string>('');
+
+  const calculated = useMemo(() => (
+    <Result
+    probableDay={probableDay}
+    progressValue={progressValue}
+    counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)}
+    rangeDates={rangeDates}
+    setCounterLeft={counterLeft} />
+  ), [probableDay, progressValue, rangeDates, counterDaysByOvulation, counterLeft]);
 
   return (
     <div>
-      <div className="containerEntry">
+      <div className="containerEntry ">
         <h1 className="title">{t('calculator')}</h1>
         <ReactSVG src="/resources/svg/appLogoBlack.svg" />
       </div>
-      <div className="containerInputs">
+      <div className={`containerInputs ${rangeDates !== '' && 'border'}`}>
         <div className="containerData">
           <h4 className="titleInput">{t('name')}</h4>
           <Input placeholder="Name" className="inputName" />
@@ -106,13 +121,16 @@ const EntryPage: FC = () => {
         <div className="buttons">
           <CalculatedEntry
             entry={entry}
-            setRangeDates={() => {}}
-            setProgressValue={() => {}}
-            setCounterDaysByOvulation={() => {}}
-          />
+            setRangeDates={setRangeDates}
+            setCounterDaysByOvulation={setCounterDaysByOvulation}
+            setProgressValue={setProgressValue}
+            setCounterLeft={setCounterLeft}
+            setProbableDay={setProbableDay}
+            />
           <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
+            {rangeDates !== '' && calculated}
     </div>
   );
 };
