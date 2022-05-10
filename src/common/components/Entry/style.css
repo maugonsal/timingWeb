@@ -65,4 +65,10 @@
   margin-top: 5px;
 }
 
-
+@media (max-width: 1120px) {
+  .containerInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
