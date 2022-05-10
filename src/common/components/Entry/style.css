@@ -70,5 +70,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-inline: 20px;
+  }
+  .containerData {
+    width: auto;
   }
 }

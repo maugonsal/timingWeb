@@ -18,12 +18,13 @@
 @media (max-width: 760px) {
   .containerTitle {
     padding: 0;
-    margin: 20px;
+    margin: 15px;
   }
   .subtitle {
-    font-size: 45px;
+    font-size: 34px;
+    padding-left: 20px;
   }
   .title {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
