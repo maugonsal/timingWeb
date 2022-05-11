@@ -71,8 +71,9 @@
     flex-direction: column;
     align-items: center;
     margin-inline: 20px;
+    padding: 10px;
   }
   .containerData {
-    width: auto;
+    width: 100%;
   }
 }

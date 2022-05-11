@@ -1,34 +1,40 @@
 .containerBar {
-    font-family: 'Red Hat Display';
-    margin-inline: 10px;
+  font-family: 'Red Hat Display';
+  margin-inline: 10px;
 }
 .titleDays {
-    margin: 0;
-    color: var(--black);
+  margin: 0;
+  color: var(--black);
 }
 .daysLeft {
-    color: var(--purple);
-    margin: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+  color: var(--purple);
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 .titleDaysLeft {
-    display: flex;
-    padding: 0;
-    align-items: baseline;
-    margin-bottom: 14px;
+  display: flex;
+  padding: 0;
+  align-items: baseline;
+  margin-bottom: 14px;
 }
 .label {
-    transform: scaleX(-1);
-    position: relative;
-    left: 25px;
+  transform: scaleX(-1);
+  position: relative;
+  left: 25px;
 }
 .day {
-    margin: 0;
-    transform: scaleX(-1);
+  margin: 0;
+  transform: scaleX(-1);
 }
 .svg {
-    position: relative;
-    top: 10px;
+  position: relative;
+  top: 10px;
+}
+@media (max-width: 1120px) {
+  .containerBar {
+    margin-left: 10px;
+    width: 90%;
+  }
 }

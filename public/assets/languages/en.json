@@ -16,5 +16,6 @@
   "possibleDay": "Possible day of birth:",
   "rangeDate":"Range of possible delivery dates:",
   "day": "Day",
-  "daysLeft": "Days Left"
+  "daysLeft": "Days Left",
+  "placeholder": "Name"
 }

@@ -22,12 +22,6 @@ header {
   background-color: var(--black);
   border-color: var(--black);
 }
-/* .logo {
-  height: 180px;
-  width: 180px;
-  position: absolute;
-  z-index: 2;
-} */
 .titleHeader {
   color: var(--white);
   font-size: 20px;

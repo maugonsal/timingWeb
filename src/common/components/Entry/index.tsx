@@ -28,14 +28,26 @@ const EntryPage: FC = () => {
   const [counterLeft, setCounterLeft] = useState<number>(0);
   const [probableDay, setProbableDay] = useState<string>('');
 
-  const calculated = useMemo(() => (
-    <Result
-    probableDay={probableDay}
-    progressValue={progressValue}
-    counterDaysByOvulation={progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)}
-    rangeDates={rangeDates}
-    setCounterLeft={counterLeft} />
-  ), [probableDay, progressValue, rangeDates, counterDaysByOvulation, counterLeft]);
+  const calculated = useMemo(
+    () => (
+      <Result
+        probableDay={probableDay}
+        progressValue={progressValue}
+        counterDaysByOvulation={
+          progressValue === 1 ? 0 : Math.abs(counterDaysByOvulation)
+        }
+        rangeDates={rangeDates}
+        setCounterLeft={counterLeft}
+      />
+    ),
+    [
+      probableDay,
+      progressValue,
+      rangeDates,
+      counterDaysByOvulation,
+      counterLeft,
+    ],
+  );
 
   return (
     <div>
@@ -46,7 +58,7 @@ const EntryPage: FC = () => {
       <div className={`containerInputs ${rangeDates !== '' && 'border'}`}>
         <div className="containerData">
           <h4 className="titleInput">{t('name')}</h4>
-          <Input placeholder="Name" className="inputName" />
+          <Input placeholder={t('placeholder')} className="inputName" />
         </div>
         <div className="containerData">
           <h4 className="titleInput">{t('ovulation')}</h4>
@@ -126,11 +138,11 @@ const EntryPage: FC = () => {
             setProgressValue={setProgressValue}
             setCounterLeft={setCounterLeft}
             setProbableDay={setProbableDay}
-            />
+          />
           <Settings entry={entry} setEntry={setEntry} />
         </div>
       </div>
-            {rangeDates !== '' && calculated}
+      {rangeDates !== '' && calculated}
     </div>
   );
 };
