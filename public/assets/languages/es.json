@@ -4,7 +4,7 @@
   "en": "Inglés",
   "es": "Español",
   "addNewDate": "Añadir fecha de inseminación",
-  "calculator": "Calcular",
+  "calculator": "Calculadora",
   "name": "Nombre del perro",
   "ovulation": "Fecha de ovulación",
   "insemination": "Fecha de inseminación",
@@ -13,8 +13,9 @@
   "preferences": "Establece tus preferencias",
   "afterOvulation": "Días después de la ovulación",
   "afterInsemination": "Días después de la inseminación",
-  "possibleDay": "Posible dia de nacimiento",
-  "rangeDate":"Rango de posibles fechas de parto",
+  "possibleDay": "Posible dia de nacimiento:",
+  "rangeDate":"Rango de posibles fechas de parto:",
   "day": "Dia",
-  "daysLeft": "Dias restantes"
+  "daysLeft": "Dias restantes",
+  "placeholder": "Nombre"
 }
