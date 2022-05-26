@@ -5,7 +5,6 @@
   "es": "Spanish",
   "addNewDate": "Add Insemination Date",
   "calculator": "Calculator",
-  "name": "Name of the Dog",
   "ovulation": "Ovulation Date",
   "insemination": "Insemination Date",
   "calculate": "Calculate",
@@ -16,6 +15,5 @@
   "possibleDay": "Possible day of birth:",
   "rangeDate":"Range of possible delivery dates:",
   "day": "Day",
-  "daysLeft": "Days Left",
-  "placeholder": "Name"
+  "daysLeft": "Days Left"
 }
