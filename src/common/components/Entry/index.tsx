@@ -18,9 +18,9 @@ const EntryPage: FC = () => {
   const { t } = useTranslation();
   const [entry, setEntry] = useState<Entry>({
     name: '',
-    ovulation: '',
+    ovulation: new Date().toString(),
     lastInsemination: '',
-    inseminations: [],
+    inseminations: [{ id: '0', date: new Date().toString() }],
     ovulationDays: 63,
     inseminationDays: 61,
   });
@@ -80,29 +80,6 @@ const EntryPage: FC = () => {
             </LocalizationProvider>
           </div>
           <div className="containerInsemination">
-            {entry.inseminations.length ? null : (
-              <>
-                <h4 className="titleInput">{t('insemination')}</h4>
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DatePicker
-                    className="containerDate"
-                    value={entry.inseminations}
-                    onChange={(newDate) => {
-                      setEntry((prev) => ({
-                        ...prev,
-                        inseminations: [
-                          ...prev.inseminations,
-                          { id: generateDateId(), date: new Date().toString() },
-                        ],
-                      }));
-                    }}
-                    renderInput={(params) => (
-                      <TextField className="containerDate" {...params} />
-                    )}
-                  />
-                </LocalizationProvider>
-              </>
-            )}
             {entry.inseminations.map((insemination, index) => (
               <>
                 <h4 className="titleInput">{t('insemination')}</h4>
@@ -110,7 +87,6 @@ const EntryPage: FC = () => {
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DatePicker
                       key={insemination.id}
-                      className="containerDate"
                       value={entry.inseminations[index].date}
                       onChange={(newDate) => {
                         const { inseminations } = entry;
@@ -137,19 +113,21 @@ const EntryPage: FC = () => {
                       )}
                     />
                   </LocalizationProvider>
-                  <Button
-                    variant="outlined"
-                    className="deletedDate"
-                    onClick={() => {
-                      setEntry((prev) => ({
-                        ...prev,
-                        inseminations: prev.inseminations.filter(
-                          (prevInseminations) => prevInseminations.id !== insemination.id,
-                        ),
-                      }));
-                    }}>
-                    X
-                  </Button>
+                  {entry.inseminations.length > 1 && (
+                    <Button
+                      variant="outlined"
+                      className="deletedDate"
+                      onClick={() => {
+                        setEntry((prev) => ({
+                          ...prev,
+                          inseminations: prev.inseminations.filter(
+                            (prevInseminations) => prevInseminations.id !== insemination.id,
+                          ),
+                        }));
+                      }}>
+                      X
+                    </Button>
+                  )}
                 </div>
               </>
             ))}

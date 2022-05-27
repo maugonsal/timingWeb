@@ -11,7 +11,6 @@ const AddNewDate: FC<{ entry: Entry; onClick: () => void }> = ({
   const { t } = useTranslation();
   return (
     <Button
-      disabled={entry.inseminations.length === 0}
       variant="contained"
       className="buttonAdd"
       onClick={onClick}>
