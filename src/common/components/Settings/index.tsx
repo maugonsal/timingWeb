@@ -31,8 +31,8 @@ const Settings: FC<{
   };
 
   return (
-    <div>
-      <Button variant="text" className="buttonAdd" onClick={handleOpen}>
+    <div className="containerSettings">
+      <Button variant="text" className="buttonSettings" onClick={handleOpen}>
         <ReactSVG src="/resources/svg/setting.svg" className="settings" />
         {t('settings')}
       </Button>

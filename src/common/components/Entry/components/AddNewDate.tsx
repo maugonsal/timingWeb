@@ -2,11 +2,18 @@ import React, { FC } from 'react';
 import { Button } from '@mui/material';
 import '../style.css';
 import { useTranslation } from 'react-i18next';
+import { Entry } from '../../../../types';
 
-const AddNewDate: FC<{ onClick: () => void }> = ({ onClick }) => {
+const AddNewDate: FC<{ entry: Entry; onClick: () => void }> = ({
+  onClick,
+  entry,
+}) => {
   const { t } = useTranslation();
   return (
-    <Button variant="text" className="buttonAdd" onClick={onClick}>
+    <Button
+      variant="contained"
+      className="buttonAdd"
+      onClick={onClick}>
       {t('addNewDate')}
     </Button>
   );

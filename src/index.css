@@ -33,7 +33,9 @@ body {
   transition: 1s all;
   max-width: 1800px;
 }
-
 a {
   text-decoration: none;
+}
+button {
+  color: #aaf8e8;
 }
