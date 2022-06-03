@@ -1,0 +1,19 @@
+{
+  "title": "Discover the exact date",
+  "subtitle": "of your next joy",
+  "en": "English",
+  "es": "Spanish",
+  "addNewDate": "Add Insemination Date",
+  "calculator": "Calculator",
+  "ovulation": "Ovulation Date",
+  "insemination": "Insemination Date",
+  "calculate": "Calculate",
+  "settings": "Set your preferences in days",
+  "preferences": "Set your preferences",
+  "afterOvulation": "Days after ovulation",
+  "afterInsemination": "Days after insemination",
+  "possibleDay": "Possible day of birth:",
+  "rangeDate":"Range of possible delivery dates:",
+  "day": "Day",
+  "daysLeft": "Days Left"
+}

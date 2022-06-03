@@ -1,0 +1,40 @@
+header {
+  background-color: var(--black);
+  height: 80px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 40px;
+}
+.container {
+  border: var(--purple);
+  border-width: 3px;
+  border-bottom-style: inset;
+}
+.containerSelect {
+  display: flex;
+  align-items: center;
+}
+.containerLanguage {
+  color: var(--white);
+  font-size: 20px;
+  background-color: var(--black);
+  border-color: var(--black);
+}
+.titleHeader {
+  color: var(--white);
+  font-size: 20px;
+}
+@media (max-width: 760px) {
+  header {
+    padding-inline: 5px;
+  }
+  .titleHeader {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .containerLanguage {
+    font-size: 17px;
+  }
+}
